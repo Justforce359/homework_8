@@ -2,10 +2,9 @@ package com.justforce359.tests;
 
 
 import com.justforce359.pages.RegistrationPage;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.justforce359.tests.TestData.*;
+import static com.justforce359.data.TestDataGenerator.*;
 
 
 public class HwPageObjectsTest extends TestBase {
@@ -17,28 +16,28 @@ public class HwPageObjectsTest extends TestBase {
                 .setFirstname(firstName)
                 .setLastname(lastName)
                 .setUserEmail(userEmail)
-                .setGender("Male")
-                .userNumber("1234567890")
-                .setBirthDate("10", "May", "2000")
-                .setSubjectsInput("Maths")
-                .hobbiesInput("Reading")
-                .uploadPic("pic.png")
-                .currentAdd("fbv;oksdfolibvjsdifb")
-                .stateAndCityInput("Uttar Pradesh", "Agra")
+                .setGender(userGender)
+                .userNumber(phoneNumber)
+                .setBirthDate(rDay, rMonth, rYear)
+                .setSubjectsInput(subjects)
+                .hobbiesInput(hobbies)
+                .uploadPic(randomPic)
+                .currentAdd(currentAdd)
+                .stateAndCityInput(randomState, randomCity)
                 .submitClick();
 
         registrationPage.shouldHave("Thanks for submitting the form")
                 .resultFormCheck("Student Name", firstName
                         + " " + lastName)
                 .resultFormCheck("Student Email", userEmail)
-                .resultFormCheck("Gender", "Male")
-                .resultFormCheck("Mobile", "1234567890")
-                .resultFormCheck("Date of Birth", "10 May,2000")
-                .resultFormCheck("Subjects", "Maths")
-                .resultFormCheck("Hobbies", "Reading")
-                .resultFormCheck("Picture", "pic.png")
-                .resultFormCheck("Address", "fbv;oksdfolibvjsdifb")
-                .resultFormCheck("State and City", "Uttar Pradesh Agra")
+                .resultFormCheck("Gender", userGender)
+                .resultFormCheck("Mobile", phoneNumber)
+                .resultFormCheck("Date of Birth", rDay + " " + rMonth + "," + rYear)
+                .resultFormCheck("Subjects", subjects)
+                .resultFormCheck("Hobbies", hobbies)
+                .resultFormCheck("Picture", randomPic)
+                .resultFormCheck("Address", currentAdd)
+                .resultFormCheck("State and City", randomState + " " + randomCity)
                 .closeModalWindow();
     }
 }
