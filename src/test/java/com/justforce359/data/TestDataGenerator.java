@@ -20,6 +20,7 @@ public class TestDataGenerator {
             hobbies = faker.options().option("Sports", "Reading", "Music"),
             randomPic = faker.options().option("pic1.png", "pic2.png"),
             currentAdd = faker.address().fullAddress(),
+            permAdd = faker.address().fullAddress(),
             randomState = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
             randomCity = getRandomCity(randomState);
 

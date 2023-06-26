@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static com.justforce359.data.TestDataGenerator.*;
 
 
-public class HwPageObjectTestWithJavaFaker extends TestBase {
+public class HwPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
