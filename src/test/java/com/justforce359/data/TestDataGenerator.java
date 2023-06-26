@@ -4,9 +4,9 @@ import com.github.javafaker.Faker;
 
 public class TestDataGenerator {
 
-    private static Faker faker = new Faker();
+    private static final Faker faker = new Faker();
 
-    public static String firstName = faker.name().firstName(),
+    public String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             userEmail = faker.internet().emailAddress(),
             userGender = faker.options().option("Other", "Male", "Female"),

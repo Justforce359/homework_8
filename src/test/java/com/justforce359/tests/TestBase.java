@@ -1,12 +1,15 @@
 package com.justforce359.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.justforce359.data.TestDataGenerator;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
 
+    TestDataGenerator testDataGenerator = new TestDataGenerator();
+
     @BeforeAll
-    static void BeforeAll () {
+    static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
