@@ -11,7 +11,7 @@ public class TestDataGenerator {
             userEmail = faker.internet().emailAddress(),
             userGender = faker.options().option("Other", "Male", "Female"),
             phoneNumber = 8 + faker.phoneNumber().subscriberNumber(9),
-            rDay = String.valueOf(faker.number().numberBetween(1, 28)),
+            rDay = String.format("%02d", faker.number().numberBetween(1, 28)),
             rMonth = faker.options().option("January", "February", "March",
                     "April", "May", "June", "July", "August",
                     "September", "October", "November", "December"),
